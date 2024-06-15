@@ -9,8 +9,28 @@ export class DoctorCards extends BaseComponent {
     return (await this.rootEls).length;
   }
 
-  async getCard(index) {
+  async getCards() {
     const cards = await this.rootEls;
-    return cards[index];
+    let arr = [];
+
+    for (const e of cards) {
+      const name = await e.$(".name").getText();
+      const education = await e.$(".education").getText();
+      const designation = await e
+        .$("div.specialization .specialization-text")
+        .getText();
+      const experience = await e
+        .$("div.experience .specialization-text")
+        .getText();
+
+      arr.push({
+        name: name,
+        education: education,
+        designation: designation,
+        experience: experience,
+      });
+    }
+
+    return arr;
   }
 }
