@@ -7,9 +7,9 @@ describe("dashboard", async () => {
     await dashboardPage.open();
   });
 
-  it("check page title ", async () => {
+  it("check page title", async () => {
     await expect(browser).toHaveTitle(
-      "Appointment Planner - Syncfusion Angular Components Showcase App"
+      "Appointment Planner - Syncfusion Angular Components Showcase Appp"
     );
   });
 });
